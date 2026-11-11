@@ -8,7 +8,9 @@ Para versionar, salve cada imagem em `docs/evidencias/prints/` com o **nome de a
 
 ## Print 01 — Aplicação publicada
 
-**Arquivo sugerido:** `01-site-publicado-colaboradores.png`
+![](prints/01-site-publicado-colaboradores.png)
+
+**Arquivo:** `prints/01-site-publicado-colaboradores.png`
 **Captura:** 11/11/2026
 **O que mostra:** página `/colaboradores` da aplicação em produção no domínio `pi3-colaboradores.vercel.app`, acessada por um navegador externo.
 
@@ -31,7 +33,9 @@ Para versionar, salve cada imagem em `docs/evidencias/prints/` com o **nome de a
 
 ## Print 02 — Suíte de testes verde (`npm test`)
 
-**Arquivo sugerido:** `02-npm-test-80-passed.png`
+![](prints/02-npm-test-80-passed.png)
+
+**Arquivo:** `prints/02-npm-test-80-passed.png`
 **Captura:** 11/11/2026 às 00:10
 **O que mostra:** execução de `npm test` no terminal, com breakdown por arquivo de teste.
 
@@ -60,7 +64,9 @@ Para versionar, salve cada imagem em `docs/evidencias/prints/` com o **nome de a
 
 ## Print 03 — Suíte + cobertura (`npm run test:coverage`)
 
-**Arquivo sugerido:** `03-coverage-report.png`
+![](prints/03-coverage-report.png)
+
+**Arquivo:** `prints/03-coverage-report.png`
 **Captura:** 11/11/2026 às 00:12
 **O que mostra:** `npm run test:coverage` com relatório V8 por arquivo.
 
@@ -92,7 +98,9 @@ Total ao pé: `Test Files 8 passed (8)`, `Tests 80 passed (80)`, `Duration 35,39
 
 ## Print 04 — Testes E2E Playwright verdes (`npm run test:e2e`)
 
-**Arquivo sugerido:** `04-playwright-test-e2e-4-passed.png`
+![](prints/04-playwright-test-e2e-4-passed.png)
+
+**Arquivo:** `prints/04-playwright-test-e2e-4-passed.png`
 **Captura:** 11/11/2026 às 00:13
 **O que mostra:** terminal com saída de `npm run test:e2e`.
 
@@ -116,7 +124,9 @@ Total ao pé: `Test Files 8 passed (8)`, `Tests 80 passed (80)`, `Duration 35,39
 
 ## Print 05 — Relatório HTML do Playwright (resumo)
 
-**Arquivo sugerido:** `05-playwright-report-resumo.png`
+![](prints/05-playwright-report-resumo.png)
+
+**Arquivo:** `prints/05-playwright-report-resumo.png`
 **Captura:** 11/11/2026 às 00:14
 **O que mostra:** interface HTML do `npx playwright show-report`, visão de resumo.
 
@@ -137,7 +147,9 @@ Total ao pé: `Test Files 8 passed (8)`, `Tests 80 passed (80)`, `Duration 35,39
 
 ## Print 06 — Playwright detalhado: passos do teste "CPF duplicado"
 
-**Arquivo sugerido:** `06-playwright-report-detalhe-cpf-duplicado.png`
+![](prints/06-playwright-report-detalhe-cpf-duplicado.png)
+
+**Arquivo:** `prints/06-playwright-report-detalhe-cpf-duplicado.png`
 **Captura:** 11/11/2026 às 00:15
 **O que mostra:** detalhe do teste `CPF duplicado: mensagem no campo` no relatório HTML.
 
