@@ -17,7 +17,7 @@ async function main() {
     update: {},
     create: {
       razaoSocial: "Globex Comércio S.A.",
-      cnpj: "45283163000134",
+      cnpj: "45283163000167",
     },
   });
 
