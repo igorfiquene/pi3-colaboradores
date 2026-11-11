@@ -38,6 +38,36 @@ const DEPARTAMENTOS = [
   { value: "OPERACOES", label: "Operações" },
 ];
 
+function Campo({
+  label,
+  name,
+  error,
+  children,
+}: {
+  label: string;
+  name: string;
+  error?: string;
+  children: React.ReactNode;
+}) {
+  const errorId = `${name}-error`;
+  return (
+    <div className="flex flex-col gap-1">
+      <label htmlFor={name} className="text-sm font-medium text-gray-700">
+        {label}
+      </label>
+      {children}
+      {error && (
+        <span id={errorId} role="alert" className="text-sm text-red-600">
+          {error}
+        </span>
+      )}
+    </div>
+  );
+}
+
+const inputCls =
+  "border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500";
+
 export function ColaboradorForm({ empresas, defaultValues, onSubmit, modoEdicao }: Props) {
   const {
     register,
@@ -75,36 +105,6 @@ export function ColaboradorForm({ empresas, defaultValues, onSubmit, modoEdicao 
       if (result.message) setMensagemGeral(result.message);
     }
   }
-
-  function Campo({
-    label,
-    name,
-    error,
-    children,
-  }: {
-    label: string;
-    name: string;
-    error?: string;
-    children: React.ReactNode;
-  }) {
-    const errorId = `${name}-error`;
-    return (
-      <div className="flex flex-col gap-1">
-        <label htmlFor={name} className="text-sm font-medium text-gray-700">
-          {label}
-        </label>
-        {children}
-        {error && (
-          <span id={errorId} role="alert" className="text-sm text-red-600">
-            {error}
-          </span>
-        )}
-      </div>
-    );
-  }
-
-  const inputCls =
-    "border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500";
 
   return (
     <form
