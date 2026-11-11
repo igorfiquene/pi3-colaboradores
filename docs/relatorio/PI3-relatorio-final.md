@@ -487,12 +487,21 @@ SMITH, P. G.; REINERTSEN, D. G. *Developing Products in Half the Time*. New York
 
 Ver `docs/evidencias/PRINTS.md` e `docs/evidencias/prints/`.
 
-- Print 01 — Aplicação publicada em `pi3-colaboradores.vercel.app/colaboradores`.
-- Print 02 — Execução de `npm test` com `80 passed (80)` em 35 s.
-- Print 03 — Relatório de cobertura com 96,55% de *statements* em `src/lib/` e schemas.
-- Print 04 — Execução de `npm run test:e2e` com `4 passed (25 s)`.
-- Print 05 — Relatório HTML do Playwright, visão de resumo (4 Passed, 0 Failed, 0 Flaky).
-- Print 06 — Playwright detalhando os passos do teste `CPF duplicado: mensagem no campo`.
+**Evidências de testes automatizados:**
+
+- **Print 02** — Execução de `npm test` com `80 passed (80)` em 35 s.
+- **Print 03** — Relatório de cobertura com 96,55% de *statements* em `src/lib/` e schemas.
+- **Print 04** — Execução de `npm run test:e2e` com `4 passed (25 s)`.
+- **Print 05** — Relatório HTML do Playwright, visão de resumo (4 Passed, 0 Failed, 0 Flaky).
+- **Print 06** — Playwright detalhando os passos do teste `CPF duplicado: mensagem no campo`.
+
+**Evidências do sistema publicado:**
+
+- **Print 01** — Listagem vazia em `pi3-colaboradores.vercel.app/colaboradores`.
+- **Print 07** — Listagem **com dados** evidenciando CPF mascarado (`***.982.247-**`) + modal de exclusão nativo aberto.
+- **Print 08** — Formulário de cadastro com erros de validação visíveis (CPF inválido, e-mail inválido).
+- **Print 09** — Formulário de edição com dados pré-preenchidos (CPF completo, pois há propósito legítimo).
+- **Print 10** — Home page do sistema em produção.
 
 ### Anexo B — Registro de bugs
 
