@@ -3,6 +3,8 @@
 **Autor:** Igor Fiquene Pessoa (RA 007747)
 **Disciplina:** Projeto Interdisciplinar III — UniCEUMA, Sistemas de Informação
 **Professor:** Edilson Lima
+**Repositório:** https://github.com/igorfiquene/pi3-colaboradores
+**App em produção:** https://pi3-colaboradores.vercel.app
 
 Sistema web de cadastro de colaboradores desenvolvido como objeto de estudo do PI III, com foco na demonstração da importância dos testes de software (unitários, integração e sistema) na garantia de qualidade. Continuação direta do trabalho do PI II.
 
