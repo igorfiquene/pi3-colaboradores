@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sistema de Cadastro de Colaboradores — Projeto Interdisciplinar III
 
-## Getting Started
+**Autor:** Igor Fiquene Pessoa (RA 007747)
+**Disciplina:** Projeto Interdisciplinar III — UniCEUMA, Sistemas de Informação
+**Professor:** Edilson Lima
 
-First, run the development server:
+Sistema web de cadastro de colaboradores desenvolvido como objeto de estudo do PI III, com foco na demonstração da importância dos testes de software (unitários, integração e sistema) na garantia de qualidade. Continuação direta do trabalho do PI II.
+
+## Stack
+
+- **Framework:** Next.js 16 (App Router) + TypeScript strict
+- **UI:** React + Tailwind CSS
+- **Validação:** Zod (schemas compartilhados cliente+servidor)
+- **Formulários:** React Hook Form
+- **Banco:** PostgreSQL (Neon)
+- **ORM:** Prisma 6
+- **Back-end:** Server Actions
+- **Testes:** Vitest + React Testing Library + Playwright
+- **Deploy:** Vercel
+
+## Funcionalidades
+
+- CRUD de colaboradores (nome, CPF validado por DV, e-mail, telefone, datas, cargo, departamento, empresa, status).
+- Listagem com busca por nome ou CPF, filtro por departamento e status, paginação.
+- CPF mascarado na listagem (`***.XXX.XXX-**`) — LGPD.
+- Checkbox obrigatório de consentimento LGPD no cadastro.
+- Banner fixo "Ambiente de demonstração acadêmica".
+- Exclusão lógica (soft delete) com modal de confirmação.
+- Empresas semeadas (ACME, Globex) — sem UI de CRUD nesta versão.
+
+## Rodando localmente
 
 ```bash
+# Node 22+
+nvm use 22
+
+# Deps
+npm install --legacy-peer-deps
+
+# Banco (requer conta Neon)
+neon login
+neon link --org-id <org> --project-id <proj>
+
+# Migração + seed
+npm run db:migrate
+npm run db:seed
+
+# Dev
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Suíte de testes
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Comando | O que roda |
+|---|---|
+| `npm test` | Todos os testes Vitest (unit + integração + componentes) |
+| `npm run test:unit` | Lógica pura (`src/lib/`, schemas Zod) |
+| `npm run test:integration` | Actions + queries contra o banco de teste |
+| `npm run test:components` | `ColaboradorForm` (RTL + user-event) |
+| `npm run test:e2e` | 4 cenários Playwright contra `npm run dev` |
+| `npm run test:coverage` | Cobertura HTML + threshold 80% em `src/lib/` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Contagem atual
 
-## Learn More
+| Camada | Testes |
+|---|---|
+| Unitários | 57 |
+| Componente | 6 |
+| Integração | 17 |
+| E2E | 4 |
+| **Total** | **84** |
 
-To learn more about Next.js, take a look at the following resources:
+### Bugs encontrados pelos testes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Ver [`docs/registro-de-bugs.md`](docs/registro-de-bugs.md).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Documentação
 
-## Deploy on Vercel
+- **Design:** [`docs/superpowers/specs/2026-11-10-pi3-colaboradores-design.md`](docs/superpowers/specs/2026-11-10-pi3-colaboradores-design.md)
+- **Plano de execução:** [`docs/superpowers/plans/2026-11-10-pi3-colaboradores.md`](docs/superpowers/plans/2026-11-10-pi3-colaboradores.md)
+- **Registro de bugs:** [`docs/registro-de-bugs.md`](docs/registro-de-bugs.md)
+- **Resumo para o relatório:** [`docs/evidencias/RESUMO.md`](docs/evidencias/RESUMO.md) _(gerado no final)_
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**URL de produção:** https://pi3-colaboradores.vercel.app
+
+Env vars na Vercel:
+- `DATABASE_URL` — pooler (Neon)
+- `DATABASE_URL_UNPOOLED` — direct connection (Neon, para migrações)
+
+Build command: `prisma generate && prisma migrate deploy && next build`
+
+## Licença
+
+Trabalho acadêmico — uso livre para fins educacionais.
