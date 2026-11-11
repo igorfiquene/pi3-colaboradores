@@ -487,21 +487,49 @@ SMITH, P. G.; REINERTSEN, D. G. *Developing Products in Half the Time*. New York
 
 Ver `docs/evidencias/PRINTS.md` e `docs/evidencias/prints/`.
 
-**Evidências de testes automatizados:**
+**A.1 — Testes automatizados**
 
-- **Print 02** — Execução de `npm test` com `80 passed (80)` em 35 s.
-- **Print 03** — Relatório de cobertura com 96,55% de *statements* em `src/lib/` e schemas.
-- **Print 04** — Execução de `npm run test:e2e` com `4 passed (25 s)`.
-- **Print 05** — Relatório HTML do Playwright, visão de resumo (4 Passed, 0 Failed, 0 Flaky).
-- **Print 06** — Playwright detalhando os passos do teste `CPF duplicado: mensagem no campo`.
+**Figura A.1 — Execução de `npm test` com 80 passed em 35 s.**
 
-**Evidências do sistema publicado:**
+![](../evidencias/prints/02-npm-test-80-passed.png)
 
-- **Print 01** — Listagem vazia em `pi3-colaboradores.vercel.app/colaboradores`.
-- **Print 07** — Listagem **com dados** evidenciando CPF mascarado (`***.982.247-**`) + modal de exclusão nativo aberto.
-- **Print 08** — Formulário de cadastro com erros de validação visíveis (CPF inválido, e-mail inválido).
-- **Print 09** — Formulário de edição com dados pré-preenchidos (CPF completo, pois há propósito legítimo).
-- **Print 10** — Home page do sistema em produção.
+**Figura A.2 — Relatório de cobertura: 96,55% de *statements* em `src/lib/` e schemas.**
+
+![](../evidencias/prints/03-coverage-report.png)
+
+**Figura A.3 — Execução de `npm run test:e2e` com 4 passed (25 s).**
+
+![](../evidencias/prints/04-playwright-test-e2e-4-passed.png)
+
+**Figura A.4 — Relatório HTML do Playwright, visão de resumo (4 Passed, 0 Failed, 0 Flaky).**
+
+![](../evidencias/prints/05-playwright-report-resumo.png)
+
+**Figura A.5 — Playwright detalhando os passos do teste `CPF duplicado: mensagem no campo`.**
+
+![](../evidencias/prints/06-playwright-report-detalhe-cpf-duplicado.png)
+
+**A.2 — Sistema publicado**
+
+**Figura A.6 — Home page do sistema em produção.**
+
+![](../evidencias/prints/10-home-page-publica.png)
+
+**Figura A.7 — Listagem `/colaboradores` com dados reais (CPF mascarado `***.XXX.XXX-**`) e modal nativo de confirmação de exclusão aberto.**
+
+![](../evidencias/prints/07-listagem-cpf-mascarado-e-modal-exclusao.png)
+
+**Figura A.8 — Formulário de cadastro com erros de validação do schema Zod visíveis abaixo dos campos CPF e E-mail.**
+
+![](../evidencias/prints/08-form-cadastro-com-erros-validacao.png)
+
+**Figura A.9 — Formulário de edição com dados pré-preenchidos (CPF completo, pois há propósito legítimo de acesso).**
+
+![](../evidencias/prints/09-form-edicao-prepreenchido.png)
+
+**Figura A.10 — Listagem vazia (estado inicial), evidenciando banner LGPD, filtros, rodapé com autoria.**
+
+![](../evidencias/prints/01-site-publicado-colaboradores.png)
 
 ### Anexo B — Registro de bugs
 
