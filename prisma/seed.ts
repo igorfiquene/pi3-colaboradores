@@ -13,7 +13,7 @@ async function main() {
     },
   });
   const globex = await prisma.empresa.upsert({
-    where: { cnpj: "45283163000134" },
+    where: { cnpj: "45283163000167" },
     update: {},
     create: {
       razaoSocial: "Globex Comércio S.A.",
