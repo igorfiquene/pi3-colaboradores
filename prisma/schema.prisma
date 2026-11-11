@@ -1,0 +1,52 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DATABASE_URL_UNPOOLED")
+}
+
+model Empresa {
+  id            String        @id @default(cuid())
+  razaoSocial   String
+  cnpj          String        @unique
+  colaboradores Colaborador[]
+  createdAt     DateTime      @default(now())
+}
+
+model Colaborador {
+  id              String       @id @default(cuid())
+  nome            String
+  cpf             String       @unique
+  email           String       @unique
+  telefone        String?
+  dataNascimento  DateTime
+  dataAdmissao    DateTime
+  cargo           String
+  departamento    Departamento
+  status          Status       @default(ATIVO)
+  consentimentoEm DateTime
+  empresaId       String
+  empresa         Empresa      @relation(fields: [empresaId], references: [id])
+  deletedAt       DateTime?
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+
+  @@index([nome])
+}
+
+enum Departamento {
+  ADMINISTRATIVO
+  FINANCEIRO
+  RH
+  TI
+  COMERCIAL
+  OPERACOES
+}
+
+enum Status {
+  ATIVO
+  INATIVO
+}
