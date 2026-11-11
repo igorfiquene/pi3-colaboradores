@@ -10,7 +10,7 @@
     "test": "vitest run",
     "test:unit": "vitest run src/lib src/features/**/schema.test.ts",
     "test:integration": "vitest run src/features --exclude 'src/features/**/schema.test.ts' --exclude 'src/features/**/components/**'",
-    "test:components": "vitest run 'src/features/**/components/**.test.tsx'",
+    "test:components": "vitest run src/features/colaboradores/components",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",

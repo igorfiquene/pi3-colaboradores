@@ -14,6 +14,8 @@ export default defineConfig({
     globals: true,
     setupFiles: ["./vitest.setup.ts"],
     exclude: ["**/node_modules/**", "**/.next/**", "tests/e2e/**"],
+    fileParallelism: false,
+    sequence: { concurrent: false },
     env: {
       ...process.env,
     },
