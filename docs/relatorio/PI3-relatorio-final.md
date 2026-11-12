@@ -539,12 +539,7 @@ Ver `docs/registro-de-bugs.md`.
 
 Ver `docs/evidencias/RESUMO.md` para a tabela completa de testes por tipo, tempos de execução e justificativa de cada escolha de stack.
 
-### Anexo D — Design e plano de execução
-
-- `docs/superpowers/specs/2026-11-10-pi3-colaboradores-design.md`
-- `docs/superpowers/plans/2026-11-10-pi3-colaboradores.md`
-
-### Anexo E — Reprodução local
+### Anexo D — Reprodução local
 
 ```bash
 git clone https://github.com/igorfiquene/pi3-colaboradores.git

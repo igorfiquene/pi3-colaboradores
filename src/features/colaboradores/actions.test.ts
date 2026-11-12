@@ -113,7 +113,7 @@ describe("atualizarColaborador (integração)", () => {
     expect(c?.cargo).toBe("Gerente");
   });
 
-  it("CPF conflitando com outro registro vira fieldErrors.cpf (Review Focus #4)", async () => {
+  it("CPF conflitando com outro registro vira fieldErrors.cpf", async () => {
     // cria segundo colaborador com outro CPF
     await criarColaborador({
       ...inputBase(empresaId),

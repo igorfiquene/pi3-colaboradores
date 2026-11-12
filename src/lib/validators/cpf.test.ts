@@ -6,7 +6,7 @@ describe("isValidCpf", () => {
     ["11144477735", "sem máscara, válido"],
     ["111.444.777-35", "com máscara, válido"],
     ["52998224725", "outro válido conhecido"],
-    [" 111.444.777-35 ", "com whitespace externo aceita (Review Focus #1)"],
+    [" 111.444.777-35 ", "com whitespace externo aceito via trim"],
   ])("aceita %s (%s)", (input) => {
     expect(isValidCpf(input)).toBe(true);
   });

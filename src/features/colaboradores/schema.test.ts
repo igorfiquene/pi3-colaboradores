@@ -35,7 +35,7 @@ describe("colaboradorSchema", () => {
     }
   });
 
-  it("nome com múltiplos espaços colapsa (Review Focus #2)", () => {
+  it("nome com múltiplos espaços colapsa pra um único espaço", () => {
     const res = colaboradorSchema.safeParse({
       ...base,
       nome: "José  da  Silva",
@@ -54,7 +54,7 @@ describe("colaboradorSchema", () => {
     expect(res.success).toBe(false);
   });
 
-  it("CPF com whitespace externo aceita (Review Focus #1)", () => {
+  it("CPF com whitespace externo aceito via trim", () => {
     const res = colaboradorSchema.safeParse({
       ...base,
       cpf: " 111.444.777-35 ",
@@ -77,7 +77,7 @@ describe("colaboradorSchema", () => {
     expect(res.success).toBe(true);
   });
 
-  it("idade exatamente 16 no dia é aceita (Review Focus #3)", () => {
+  it("idade exatamente 16 no dia é aceita (limite inclusivo)", () => {
     const res = colaboradorSchema.safeParse({
       ...base,
       dataNascimento: "10/11/2010", // faz 16 anos exatamente hoje

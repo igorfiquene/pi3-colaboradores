@@ -41,8 +41,12 @@ yarn-error.log*
 next-env.d.ts
 .neon
 
-# claude code assets
+# local tooling
 .claude/
+neon.ts
+AGENTS.md
+skills-lock.json
+docs/superpowers/
 
 # playwright
 /playwright-report

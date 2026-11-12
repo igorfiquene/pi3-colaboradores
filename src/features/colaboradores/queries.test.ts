@@ -73,7 +73,7 @@ describe("listarColaboradores", () => {
     expect(res.itens[0].nome).toBe("Pessoa 02");
   });
 
-  it("busca por CPF com pontuação normaliza (Review Focus #5)", async () => {
+  it("busca por CPF com pontuação normaliza termo pra dígitos", async () => {
     await semear(3, empresaId);
     // CPFs semeados: 10000000000, 10000000001, 10000000002
     const res = await listarColaboradores({ q: "100.000.000-02" });

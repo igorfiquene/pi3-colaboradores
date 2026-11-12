@@ -78,8 +78,6 @@ Ver [`docs/registro-de-bugs.md`](docs/registro-de-bugs.md).
 
 ## Documentação
 
-- **Design:** [`docs/superpowers/specs/2026-11-10-pi3-colaboradores-design.md`](docs/superpowers/specs/2026-11-10-pi3-colaboradores-design.md)
-- **Plano de execução:** [`docs/superpowers/plans/2026-11-10-pi3-colaboradores.md`](docs/superpowers/plans/2026-11-10-pi3-colaboradores.md)
 - **Registro de bugs:** [`docs/registro-de-bugs.md`](docs/registro-de-bugs.md)
 - **Resumo para o relatório:** [`docs/evidencias/RESUMO.md`](docs/evidencias/RESUMO.md) _(gerado no final)_
 
